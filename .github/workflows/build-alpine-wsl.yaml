@@ -2,7 +2,7 @@ name: Build and release Alpine for WSL
 run-name: Build and Release Alpine ${{ github.ref_name }}
 
 on:
-  push:
+  workflow_dispatch:
     tags:
       - "3.23.[0-9]+-[0-9]+"
 
@@ -21,7 +21,7 @@ jobs:
       matrix:
         arch:
           - x86_64
-          - aarch64
+          - aarch64  
 
     steps:
       - name: Checkout sources
